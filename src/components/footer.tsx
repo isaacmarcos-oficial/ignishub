@@ -33,7 +33,7 @@ export default function Footer () {
             </p>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-xs">
           <p>&copy; {new Date().getFullYear()} IGNIS HUB. Todos os direitos reservados.</p>
         </div>
       </div>

@@ -1,16 +1,21 @@
 import React from 'react';
-import { Flame } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
-export default function Navbar () {
+export default function Navbar() {
   return (
     <nav className="bg-gray-950 border-b border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <Flame className="h-8 w-8 text-green-500" />
-            <span className="text-xl font-bold">IGNIS HUB</span>
+            <Image
+              src="/ignishub1.png"
+              alt="IGNIS HUB"
+              width={150}
+              height={150}
+            />
           </Link>
+
           <div className="flex space-x-4">
             <Link
               href="/"
