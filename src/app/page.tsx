@@ -1,4 +1,5 @@
 import { ArrowRight, MessageSquare } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -50,7 +51,9 @@ export default function Home() {
               </ul>
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl">
-              <img
+              <Image
+                width={600}
+                height={400}
                 src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                 alt="Dashboard ItsZap"
                 className="w-full h-auto"
