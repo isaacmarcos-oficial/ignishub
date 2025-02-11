@@ -8,7 +8,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">
             Transformando ideias em{' '}
-            <span className="text-green-600">realidade digital</span>
+            <span className="text-green-600">realidade.</span>
           </h1>
           <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
             Desenvolvemos sistemas e sites web personalizados para impulsionar seu negócio
