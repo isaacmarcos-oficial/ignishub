@@ -12,12 +12,13 @@
 }
 
 :root {
+  --background: 220 20% 6%;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: 36 95% 55%;
+  --primary-foreground: 220 20% 6%;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -53,6 +54,11 @@
   --log-debug-bg: 280 100% 95%;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+  /* --gradient-primary: linear-gradient(135deg, hsl(36 95% 55%), hsl(25 95% 50%)); */
+  --gradient-primary: linear-gradient(135deg, hsl(120, 95%, 55%), hsl(120 90% 50%));
+  --gradient-dark: linear-gradient(180deg, hsl(220 20% 6%), hsl(220 25% 4%));
+  --gradient-card: linear-gradient(145deg, hsl(220 18% 12%), hsl(220 18% 8%));
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, hsla(128, 95%, 55%, 0.15), transparent 60%);
 }
 
 .dark {
@@ -206,10 +212,6 @@
     animation: marquee 300s linear infinite;
   }
 
-  .container {
-    @apply flex flex-col bg-muted/50 rounded-xl min-h-screen w-full md:p-8 p-4 max-w-6xl mx-auto gap-2;
-  }
-
   .glass-card {
     @apply bg-card/80 backdrop-blur-sm border border-border/50;
   }
@@ -232,6 +234,36 @@
     background-color: hsl(var(--muted-foreground) / 0.3);
     border-radius: 3px;
   }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 20px hsla(128, 95%, 55%, 0.15);
+  }
+
+  .glow-md {
+    box-shadow: 0 0 40px hsla(128, 95%, 55%, 0.15);
+  }
 }
 
 @layer base {
@@ -240,8 +272,9 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
+
   html {
     @apply font-sans;
   }

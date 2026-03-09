@@ -6,6 +6,7 @@ import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "sonner";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster />
           <TooltipProvider>
             <Navbar />
             {children}

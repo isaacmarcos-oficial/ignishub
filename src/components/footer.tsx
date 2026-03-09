@@ -1,42 +1,57 @@
+import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <div className="bg-zinc-950 border-t border-zinc-700">
-      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="border-t border-border py-12 w-full items-center justify-center">
+      <div className="flex flex-col mx-auto px-6 justify-center max-w-7xl">
+        <div className="grid sm:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">IGNIS HUB</h3>
-            <p className="text-zinc-400">
-              Criando soluções digitais inovadoras para seu negócio
+            <Link href="/" className="text-lg">
+              <Image
+                src="/ignishub1.png"
+                alt="IGNIS HUB"
+                width={125}
+                height={125}
+              />
+            </Link>
+            <p className="text-sm text-muted-foreground mt-3">
+              Criando soluções digitais inovadoras para seu negócio.
             </p>
           </div>
+
           <div>
-            <h3 className="text-lg font-semibold mb-4">ItsZap</h3>
+            <h4 className="font-heading font-semibold text-sm mb-3">ItsZap</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/itszap/privacy" className="text-zinc-400 hover:text-white">
+                <a href="https://ignishub.com.br/itszap/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Política de Privacidade
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/itszap/terms" className="text-zinc-400 hover:text-white">
+                <a href="https://ignishub.com.br/itszap/terms" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Termos de Serviço
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
+
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contato</h3>
-            <p className="text-zinc-400">
+            <h4 className="font-heading font-semibold text-sm mb-3">Contato</h4>
+            <a href="mailto:contato@ignishub.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               contato@ignishub.com
-            </p>
+            </a>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-zinc-700 text-center text-zinc-400 text-xs">
-          <p>&copy; {new Date().getFullYear()} IGNIS HUB. Todos os direitos reservados.</p>
+
+        <div className="border-t border-border pt-6 text-center">
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} IGNIS HUB. Todos os direitos reservados.
+          </p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
+
+export default Footer;
