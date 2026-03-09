@@ -13,6 +13,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        border: "var(--border)",
+        ring: "var(--ring)",
         "gray": {
           100: "#E1E1E6",
           200: "#C4C4CC",

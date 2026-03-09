@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: "IGNIS HUB | Transformando ideias em realidade digital",
@@ -20,11 +20,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={cn("font-sans", geist.variable)}>
       <head>
-        <link rel="icon" href="/ignishub.png" sizes="any"/>
+        <link rel="icon" href="/ignishub.png" sizes="any" />
       </head>
-      <body
-        className="antialiased"
-      >
+      <body className="antialiased">
         <Navbar />
         {children}
         <Footer />
