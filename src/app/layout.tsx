@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "next-themes";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -18,14 +20,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={cn("font-sans", geist.variable)}>
+    <html lang="pt-br" className={cn("font-sans", geist.variable)} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/ignishub.png" sizes="any" />
       </head>
       <body className="antialiased">
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TooltipProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
