@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Button } from "./ui/button";
 
 const navLinks = [
   { label: "Home", href: "/#home" },
@@ -85,9 +86,11 @@ const Navbar = () => {
               href="https://wa.me/553898377158"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2 rounded-lg text-sm font-medium bg-primary text-primary-foreground text-center"
+            // className="px-5 py-2 rounded-lg text-sm font-medium bg-primary text-primary-foreground text-center"
             >
-              Fale Conosco
+              <Button>
+                Fale Conosco
+              </Button>
             </a>
           </div>
         </motion.div>

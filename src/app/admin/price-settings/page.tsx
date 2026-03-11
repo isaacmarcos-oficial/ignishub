@@ -2,11 +2,11 @@
 import { useState } from 'react';
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import { Button } from "@/components/ui/button";
-import Formulario from './_components/formulario';
 import { toast } from 'sonner';
-import TabelaOS from './_components/tabela';
+import Formulario from '../_components/formulario';
+import TabelaOS from '../_components/tabela';
 
-export default function Admin() {
+export default function PriceSettings() {
   const [codigo, setCodigo] = useState("");
   const [autenticado, setAutenticado] = useState(false);
   const senhaCorreta = process.env.NEXT_PUBLIC_SECRET_KEY!; // senha fixa
@@ -37,7 +37,7 @@ export default function Admin() {
   // }
 
   return (
-    <main id="servicos" className="py-30 relative">
+    <div>
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "var(--gradient-glow)" }}
@@ -47,6 +47,6 @@ export default function Admin() {
         <Formulario onResultado={(res) => console.log(res)} />
         <TabelaOS />
       </div>
-    </main>
+    </div>
   );
 }

@@ -22,6 +22,7 @@ export default {
         body: ['Inter', 'sans-serif'],
       },
       colors: {
+        brand: "#1ff91f",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

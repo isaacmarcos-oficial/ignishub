@@ -1,4 +1,5 @@
 "use client"
+import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -54,14 +55,14 @@ const Hero = () => {
               href="https://wa.me/553898377158"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-medium bg-primary text-primary-foreground hover:opacity-90 transition-opacity glow-sm"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-medium bg-green-500 text-primary-foreground hover:opacity-90 transition-opacity glow-sm"
             >
               Entre em contato
               <ArrowRight size={18} />
             </a>
             <a
               href="#servicos"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-medium border border-border text-foreground hover:bg-secondary transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-medium border border-green-500 text-green-500 hover:bg-secondary transition-colors cursor-pointer"
             >
               Nossos serviços
             </a>
@@ -74,12 +75,14 @@ const Hero = () => {
             className="flex flex-wrap items-center justify-center gap-3"
           >
             {techStack.map((tech) => (
-              <span
+              <Badge
+                variant="outline"
+
                 key={tech}
-                className="px-4 py-1.5 rounded-full text-xs font-medium border border-border text-muted-foreground"
+                className="px-4 py-1.5 text-xs font-medium border border-green-500 text-muted-foreground"
               >
                 {tech}
-              </span>
+              </Badge>
             ))}
           </motion.div>
         </div>

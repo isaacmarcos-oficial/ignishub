@@ -34,9 +34,7 @@ export default function RootLayout({
         >
           <Toaster />
           <TooltipProvider>
-            <Navbar />
             {children}
-            <Footer />
           </TooltipProvider>
         </ThemeProvider>
       </body>

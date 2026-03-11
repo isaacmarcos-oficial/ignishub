@@ -40,10 +40,10 @@ const ItsZap = () => {
             </div>
 
             <a
-              href="https://zap.ignishub.com.br/"
+              href="https://itszap.ignishub.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium bg-primary text-primary-foreground hover:opacity-90 transition-opacity glow-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium bg-green-500 text-primary-foreground hover:opacity-80 transition-opacity glow-sm"
             >
               Conheça o ItsZap
               <ArrowRight size={18} />
